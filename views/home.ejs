@@ -1,0 +1,23 @@
+<%- include("partial/header.ejs") %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post</title>
+</head>
+<body>
+    <h1>Home</h1>
+    <p><%= home %></p>
+    <% posts.forEach(function(post){ %>
+       <h1><%= post.title %></h1>
+       <p>
+        <%= post.content.split("").slice(0,300).join("")+"..." %>
+        <a href="posts/<%=post.title %>">Read More</a>
+    </p>
+    <%})%>
+</body>
+</html>
+
+<%- include("partial/footer.ejs") %>
